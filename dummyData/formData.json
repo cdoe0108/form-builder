@@ -1,0 +1,57 @@
+[
+    {
+        "type": "text",
+        "template": "TextField",
+        "name": "text-input-name",
+        "id": "text-input-id",
+        "options": [],
+        "value": "",
+        "required": false,
+        "regex": "",
+        "error": "Text Field is empty"
+    },
+    {
+        "type": "date",
+        "template": "DateField",
+        "name": "date-input-name",
+        "id": "date-input-id",
+        "options": [],
+        "value": "",
+        "required": false,
+        "regex": "",
+        "error": "Date Field is empty"
+    },
+    {
+        "type": "select",
+        "template": "Select",
+        "name": "select-input-name",
+        "id": "select-input-id",
+        "options": ["Country","State","City","Locality"],
+        "value": "",
+        "required": false,
+        "regex": "",
+        "error": "Select Field is empty"
+    },
+    {
+        "type": "checkbox",
+        "template": "Checkbox",
+        "name": "checkbox-input-name",
+        "id": "checkbox-input-id",
+        "options": ["B.Tech","M.Tech"],
+        "value": "",
+        "required": false,
+        "regex": "",
+        "error": "Checkbox Field is empty"
+    },
+    {
+        "type": "radio",
+        "template": "Radio",
+        "name": "radio-input-name",
+        "id": "radio-input-id",
+        "options": ["Male","Female"],
+        "value": "",
+        "required": false,
+        "regex": "",
+        "error": "Radio Field is empty"
+    }
+]
