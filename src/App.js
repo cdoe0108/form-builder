@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { getFormData } from './ApiCall.js';
-import { TextField, Select, DateField, Checkbox, Radio } from './components';
 
 const App = () => {
   const [formFields, setFormFields] = useState([]);
   useEffect(() => {
     getFormData('./dummyData/formData.json').then(response => {
-      setFormFields(response);
+      response.map(field => {
+        asyncComponent('./components/' + field.template);
+      });
     });
   }, []);
-  const components = [TextField, Select, Checkbox, DateField, Radio];
+
+  const asyncComponent = path => {
+    import(`${path}`).then(module =>
+      setFormFields(m => m.concat(module.default))
+    );
+  };
+
   return (
     <div>
-      {formFields.map(field =>
-        components.map((Component, i) =>
-          field.template == Component.name ? <Component key={i} /> : null
-        )
-      )}
+      {formFields.map((Component, i) => Component && <Component key={i} />)}
     </div>
   );
 };
