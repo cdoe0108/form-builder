@@ -1,0 +1,8 @@
+@import '../../styles/base';
+.customcheck{
+    padding: 5px 0px 3px 0px;
+    .customcheckLabel{
+        @include roboto_medium;
+        padding-left: 10px;
+    }
+}

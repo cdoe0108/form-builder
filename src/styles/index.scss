@@ -1,0 +1,39 @@
+@import '../styles/variables';
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.formContainer{
+    border: 1px solid #eee;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 30px 60px;
+    width: 50%;
+}
+.btn{
+    padding: 8px 15px;
+    outline: none;
+    opacity: 0.8;
+    border-radius: 4px;
+    cursor: pointer;
+    &.btnPrimary{
+        background: $borderFocusClr;
+        border: rgba(0,0,0,0.3);
+        color: #fff;
+        font-size: 14px;
+    }
+    &:hover{
+        opacity: 1.0; 
+    }
+}

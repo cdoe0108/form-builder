@@ -1,0 +1,9 @@
+@import '../../styles/base';
+@import '../../styles/base';
+.customradio{
+    padding: 5px 0px 3px 0px;
+    .customradioLabel{
+        @include roboto_medium;
+        padding-left: 10px;
+    }
+}

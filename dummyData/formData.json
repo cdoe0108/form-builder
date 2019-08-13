@@ -8,6 +8,8 @@
         "value": "",
         "required": false,
         "regex": "",
+        "placeholder": "Some text",
+        "label": "Textfield",
         "error": "Text Field is empty"
     },
     {
@@ -19,6 +21,8 @@
         "value": "",
         "required": false,
         "regex": "",
+        "placeholder": "Some date",
+        "label": "Datefield",
         "error": "Date Field is empty"
     },
     {
@@ -26,10 +30,17 @@
         "template": "Select",
         "name": "select-input-name",
         "id": "select-input-id",
-        "options": ["Country","State","City","Locality"],
+        "options": [
+            {"id":"sel-1","name":"Country","value":"country"},
+            {"id":"sel-2","name":"State","value":"state"},
+            {"id":"sel-3","name":"City","value":"city"},
+            {"id":"sel-4","name":"Locality","value":"locality"}
+        ],
         "value": "",
         "required": false,
         "regex": "",
+        "placeholder": "Some text",
+        "label": "Select",
         "error": "Select Field is empty"
     },
     {
@@ -37,10 +48,17 @@
         "template": "Checkbox",
         "name": "checkbox-input-name",
         "id": "checkbox-input-id",
-        "options": ["B.Tech","M.Tech"],
+        "options": [
+            {"id":"checkbox1","name":"B.Tech","value":"btech"},
+            {"id":"checkbox2","name":"M.tech","value":"mtech"},
+            {"id":"checkbox3","name":"MBBS","value":"mbbs"},
+            {"id":"checkbox4","name":"MBA","value":"mba"}
+        ],
         "value": "",
         "required": false,
         "regex": "",
+        "placeholder": "Some text",
+        "label": "Checkbox",
         "error": "Checkbox Field is empty"
     },
     {
@@ -48,10 +66,15 @@
         "template": "Radio",
         "name": "radio-input-name",
         "id": "radio-input-id",
-        "options": ["Male","Female"],
+        "options": [
+            {"id":"male","name":"Male","value":"male"},
+            {"id":"female","name":"Female","value":"female"}
+        ],
         "value": "",
         "required": false,
         "regex": "",
+        "placeholder": "Some text",
+        "label": "Radio",
         "error": "Radio Field is empty"
     }
 ]

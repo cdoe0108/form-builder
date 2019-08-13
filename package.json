@@ -23,6 +23,7 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.1.4",
     "react": "^16.8.6",
+    "react-datepicker": "^2.8.0",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
