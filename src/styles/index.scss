@@ -1,4 +1,6 @@
 @import '../styles/variables';
+@import '../styles/fonts';
+
 *{
     margin: 0;
     padding: 0;
@@ -7,19 +9,26 @@
 .mainContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: absolute;
-    top: 0;
+    top: 160px;
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 3% 5%;
 }
 
 .formContainer{
     border: 1px solid #eee;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     padding: 30px 60px;
-    width: 50%;
+    width: 100%;
+}
+.buttonWrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0px;
 }
 .btn{
     padding: 8px 15px;
@@ -33,7 +42,65 @@
         color: #fff;
         font-size: 14px;
     }
+    &.btnSecondary{
+        background: #fff;
+        border: 1px solid $borderFocusClr;
+        color: $borderFocusClr;
+        font-size: 14px;
+    }
     &:hover{
         opacity: 1.0; 
+    }
+}
+.innerContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.fieldOptions{
+    width: 20%;
+    border: 1px solid $borderClr;
+    padding: 10px 20px;
+    ul{
+        li{
+            display: block;
+            list-style-type: none;
+            padding: 6px 0px;
+            label{
+                padding-left: 5px;
+                @include roboto_medium;
+            }
+        }
+    }
+}
+.fieldProperties{
+    width: 60%;
+    padding: 10px 20px;
+    border: 1px solid $borderClr;
+    .fieldPropertyType{
+        padding: 6px 0px;
+        display: flex;
+        justify-content: space-between;
+        .propertyLabel{
+            font-size: 14px;
+            @include roboto_medium;
+        }
+        .propertyTypeInput{
+            width: 60%;
+            padding: 10px 12px;
+            border: 1px solid $borderClr;
+            outline: none;
+            box-shadow: none;
+            border-radius: 4px;
+            &:disabled{
+                background: #eee;
+                cursor: not-allowed;
+            }
+            &:focus{
+                border-color: $borderFocusClr;
+                box-shadow: none;
+                outline: none;
+            }
+        }
     }
 }

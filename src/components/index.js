@@ -3,3 +3,4 @@ export { default as Checkbox } from './Checkbox/index';
 export { default as Radio } from './Radio/index';
 export { default as Select } from './Select/index';
 export { default as DateField } from './DateField/index';
+export { default as Menu } from './Menu/index';

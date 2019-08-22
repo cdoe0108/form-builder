@@ -1,55 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { getFormData } from './ApiCall.js';
-import style from './styles/index.scss';
+import React from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
+import styles from './styles/index.scss';
+import Menu from './components/Menu/index';
 
 const App = () => {
-  const [formFields, setFormFields] = useState([]);
-  useEffect(() => {
-    getFormData('./dummyData/formData.json').then(response => {
-      response.map(field => {
-        asyncComponent(field);
-      });
-    });
-  }, []);
-
-  const asyncComponent = field => {
-    let path = './components/' + field.template;
-    import(`${path}`).then(module => {
-      field['component'] = module.default;
-      setFormFields(m => m.concat(field));
-    });
+  // map over the routes imported here
+  const renderRoutes = () => {
+    return Routes.map((route, i) => (
+      <Route
+        exact={route.exact}
+        key={i}
+        path={route.path}
+        component={route.component}
+      />
+    ));
   };
-
-  const handleChange = (name, val) => {
-    formFields.map(field => {
-      if (name == field.name) {
-        field.value = val;
-      }
-    });
-  };
-
-  const submitFormdata = event => {
-    event.preventDefault();
-    console.log(formFields);
-  };
-
   return (
-    <div className={style.mainContainer}>
-      <form
-        className={style.formContainer}
-        onSubmit={event => submitFormdata(event)}
-      >
-        {formFields.map(
-          (field, i) =>
-            field.component && (
-              <field.component key={i} {...field} handleChange={handleChange} />
-            )
-        )}
-        <button type="submit" className={`${style.btn} ${style.btnPrimary}`}>
-          Submit
-        </button>
-      </form>
-    </div>
+    <BrowserRouter>
+      <Menu />
+      <div className={styles.mainContainer}>
+        <Switch>{renderRoutes()}</Switch>
+      </div>
+    </BrowserRouter>
   );
 };
 

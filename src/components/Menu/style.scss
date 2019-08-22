@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+.menuWrapper{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    padding: 20px 0px;
+    border-bottom: 1px solid $borderClr;
+}
+.menuBtn{
+    padding: 20px 65px;
+    outline: none;
+    opacity: 0.8;
+    font-size: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
